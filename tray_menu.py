@@ -29,7 +29,7 @@ DEBUG = False
 
 
 def message(data=None):
-    msg=gtk.MessageDialog(parent= None,type= gtk.MessageType.INFO,buttons= gtk.ButtonsType.OK,message_format = data)
+    msg=gtk.MessageDialog(parent= None,message_type= gtk.MessageType.INFO,buttons= gtk.ButtonsType.OK,text = data)
     msg.run()
     msg.destroy() 
 
