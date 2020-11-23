@@ -36,7 +36,7 @@ def message(data=None):
 
 def exec_comm(cmd, service):
     msg = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, universal_newlines=True).stdout.read()
-    msg = msg.strip(b' ')
+    msg = msg.strip()
     if not msg:
         return "'" + service + "' executed successfully"
     if DEBUG:
