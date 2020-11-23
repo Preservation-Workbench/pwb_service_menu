@@ -35,10 +35,10 @@ def message(data=None):
 
 
 def exec_comm(cmd, service):
-    msg = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE).stdout.read()
-    msg = str(msg).strip(b' ')
+    msg = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, universal_newlines=True).stdout.read()
+    msg = msg.strip(b' ')
     if not msg:
-        msg = "'" + service + "' executed successfully"
+        return "'" + service + "' executed successfully"
     if DEBUG:
         print(msg)
     return msg
