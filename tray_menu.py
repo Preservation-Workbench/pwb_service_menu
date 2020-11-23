@@ -34,18 +34,18 @@ def message(data=None):
     msg.destroy() 
 
 
-def exec_comm(cmd):
+def exec_comm(cmd, service):
     msg_return = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE).stdout.read()
-    if not msg_return:
-        msg_return = 'test'
+    if not msg_return.strip():
+        msg_return = "'" + service + "' executed successfully"
     if DEBUG:
         print(msg_return)
     return msg_return
 
 
-def cmd_item(title, cmd):
-  item = gtk.MenuItem(title)
-  item.connect_object("activate", lambda x: message(exec_comm(cmd)), None)
+def cmd_item(cmd, service):
+  item = gtk.MenuItem(service)
+  item.connect_object("activate", lambda x: message(exec_comm(cmd, service)), None)
   return item
 
 
