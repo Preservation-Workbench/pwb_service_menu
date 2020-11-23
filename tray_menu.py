@@ -43,7 +43,7 @@ def exec_comm(cmd, service):
     return msg_return
 
 
-def cmd_item(cmd, service):
+def cmd_item(service, cmd):
   item = gtk.MenuItem(service)
   item.connect_object("activate", lambda x: message(exec_comm(cmd, service)), None)
   return item
