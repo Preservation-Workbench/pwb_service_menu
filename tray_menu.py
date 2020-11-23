@@ -41,7 +41,7 @@ def exec_comm(cmd, service):
         msg = "'" + service + "' executed successfully"
     if DEBUG:
         print(msg)
-    return msg
+    return msg.decode('utf8')
 
 
 def cmd_item(service, cmd):
