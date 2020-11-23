@@ -36,6 +36,8 @@ def message(data=None):
 
 def exec_comm(cmd):
     msg_return = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE).stdout.read()
+    if not msg_return:
+        msg_return = 'test'
     if DEBUG:
         print(msg_return)
     return msg_return
