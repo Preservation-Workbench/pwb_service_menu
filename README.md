@@ -1,2 +1,2 @@
 # pwb_service_menu
-Simple tray manager for services and programs, with start or stop
+Simple tray manager to start/stop services on PWLinux.
